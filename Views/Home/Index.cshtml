@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">random passcode #@(@Context.Session.GetInt32("TimesGenerated") == null ? "0" : @Context.Session.GetInt32("TimesGenerated"))</h1>
+    <input type="text" value="@Context.Session.GetString("RandomPassCode")" readonly>
+    <a asp-action="Generate" class="btn btn-warning">Generate</a>
+</div>
